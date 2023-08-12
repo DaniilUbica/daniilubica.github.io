@@ -1,0 +1,16 @@
+[package]
+name = "proj_with_sereja"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = "0.4.11"
+failure = "0.1.5"
+failure_derive = "0.1.5"
+
+[dependencies.rocket_contrib]
+version = "0.4"
+default-features = false
+features = ["tera_templates", "serve"]
