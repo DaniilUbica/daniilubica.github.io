@@ -1,5 +1,5 @@
 html, body {
-  width: 100%;
+  width: 70%;
   height:100%;
   font-family: 'Roboto', sans-serif;  
 }
@@ -37,26 +37,10 @@ h3 {
   width: 350px;
   position: absolute;
   margin: 0 auto;
-  left: calc(45% - 100px);
+  left: calc(45% - 80px);
   top: 35%;
   text-align: center;
   animation: show_block 1s linear forwards;
-}
-
-.proj_name_header {
-    width: 400px;
-    height: 60px;
-    color: white;
-    border: 3px solid;
-    font-size: 32px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    left: 0%;
-    top: 20%;
-    text-align: center;
-    line-height: 60px;   
 }
 
 .proj_block {
@@ -73,7 +57,7 @@ h3 {
     height: 200px;
     font-size: 20px;
     top: 50%;
-    left: 7%;
+    left: 12%;
 }
 
 .proj_block:hover {

@@ -17,9 +17,46 @@ pub fn show_proj_info(proj: String) -> Html<String> {
         "people_vs_undeads" => "People vs Undeads",
         "escape_from_bobrovo" => "Escape from Bobrovo",
         "mematrica" => "Mematrica",
-        "txt_process" => "Text processing lib",
+        "txt_process" => "Txt processor",
         "database" => "Database app",
         &_ => "Error 404",
+    };
+
+    let project_description = match &proj[..] {
+        "people_vs_undeads" => "Strategy game, made with my own game engine, C++ and SFML",
+        "escape_from_bobrovo" => "Little top-down shooter with bosses, buffs and ultimates, made with my own game engine on C++/SFML.",
+        "mematrica" => "An easy to use library for working with matrices.",
+        "txt_process" => "A little library for text processing.",
+        "database" => "An application that will help you manage your databases. It works with a tcp-server made on rust",
+        &_ => " ",
+    };
+
+    let project_repo_link = match &proj[..] {
+        "people_vs_undeads" => "https://github.com/DaniilUbica/People-vs-Undeads",
+        "escape_from_bobrovo" => "https://github.com/DaniilUbica/escape-from-bobrovo",
+        "mematrica" => "https://github.com/DaniilUbica/mematrica",
+        "txt_process" => "https://github.com/DaniilUbica/txt_processor",
+        "database" => "https://github.com/DaniilUbica/databases-app",
+        &_ => " ",
+    };
+
+    let project_link = match &proj[..] {
+        "people_vs_undeads" => " https://drive.google.com/file/d/16OEKe-G-OlR5mi3BHdaPnWDOAsv9QW4a/view?usp=sharing",
+        "escape_from_bobrovo" => "https://drive.google.com/file/d/1GVT7yEVmIJxBMDYBiPXPLe0PjBa0tAfL/view?usp=sharing",
+        "mematrica" => "https://crates.io/crates/mematrica",
+        "txt_process" => "https://crates.io/crates/txt_processor",
+        "database" => "",
+        &_ => " ",
+    };
+
+    let project_full_description = match &proj[..] {
+        "people_vs_undeads" => "
+        A game inspired by the old age of war flash game. Implemented in the C++ programming language using OOP, the SFML graphics library and my game engine, which was developed in one of my projects. The essence of the game is to prevent the enemy from destroying your town hall and at the same time demolishing his town hall. The game has 3 types of units, the ability to build towers that will attack the enemy, the ability to improve wars.",
+        "escape_from_bobrovo" => "https://github.com/DaniilUbica/escape-from-bobrovo",
+        "mematrica" => "https://github.com/DaniilUbica/mematrica",
+        "txt_process" => "https://github.com/DaniilUbica/txt_processor",
+        "database" => "https://github.com/DaniilUbica/databases-app",
+        &_ => " ",
     };
 
     Html(
@@ -30,7 +67,40 @@ pub fn show_proj_info(proj: String) -> Html<String> {
     </head>
     <body>
         <link rel=\"stylesheet\" type=\"text/css\" href=\"../static/styles/style.css\"></link>   
-        <div class=\"proj_name_header\">{}</div>
-    </body>", project_name)
+        <style> .header {{
+            width: 400px;
+          }}</style>
+        <div class=\"header\">{}</div>
+        <style>.description {{
+            top: 30%;
+          }}</style>
+        <h3 class=\"description\">{}</h3>
+        <style>.full_description {{
+            width: 550px;
+            left: calc(45% - 180px); 
+            top: 40%;
+          }}</style>
+        <h3 class=\"full_description\">{}</h3>
+        <style>.proj_block{{
+            width: 150px;
+            height: 40px;
+            top: 60%;
+            line-height: 40px;
+            left: calc(46% - 90px);
+            cursor: pointer;
+        }}
+        </style>
+        <div class=\"proj_block\" onclick=\"window.location.href='{}';\">Try it!</div>
+        <style>.proj_block{{
+            width: 150px;
+            height: 40px;
+            top: 60%;
+            line-height: 40px;
+            left: calc(46% - 90px);
+            cursor: pointer;
+        }}
+        </style>
+        <div class=\"proj_block\" onclick=\"window.location.href='{}';\">Repository</div>
+    </body>", project_name, project_description, project_full_description, project_link, project_repo_link)
     )
 }

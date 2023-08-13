@@ -7,7 +7,7 @@ function on_proj_over() {
 }
 
 function init_projects() {
-    let start_x = 12;
+    let start_x = 17;
     for (let i = 2; i < 6; i++) {
         document.getElementById("p" + i.toString()).style.left = start_x.toString() + '%';
         start_x += 5;
