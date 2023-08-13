@@ -758,6 +758,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "my_site"
+version = "0.1.0"
+dependencies = [
+ "failure",
+ "failure_derive",
+ "rocket",
+ "rocket_contrib",
+]
+
+[[package]]
 name = "net2"
 version = "0.2.39"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -937,16 +947,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "18fb31db3f9bddb2ea821cde30a9f70117e3f119938b5ee630b7403aa6e2ead9"
 dependencies = [
  "unicode-ident",
-]
-
-[[package]]
-name = "proj_with_sereja"
-version = "0.1.0"
-dependencies = [
- "failure",
- "failure_derive",
- "rocket",
- "rocket_contrib",
 ]
 
 [[package]]

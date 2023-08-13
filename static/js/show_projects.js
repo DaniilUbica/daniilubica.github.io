@@ -1,12 +1,25 @@
+let project_refs = [];
+
 function on_proj_over() {
-    document.getElementById("p1").style.cursor = "pointer";
-    document.getElementById("p2").style.cursor = "pointer";
-    document.getElementById("p3").style.cursor = "pointer";
+    for (let i = 1; i < 6; i++) {
+        document.getElementById("p" + i.toString()).style.cursor = "pointer";
+    }
 }
 
 function init_projects() {
-    document.getElementById("p2").style.left = '0%';
-    document.getElementById("p2").style.top = '35%';
-    document.getElementById("p3").style.left = '20%';
-    document.getElementById("p3").style.top = '11%';
+    let start_x = 12;
+    for (let i = 2; i < 6; i++) {
+        document.getElementById("p" + i.toString()).style.left = start_x.toString() + '%';
+        start_x += 5;
+    }
+    set_projects_refs();
+}
+
+function set_projects_refs() {
+    project_refs.push("people_vs_undeads", "escape_from_bobrovo", "mematrica", "txt_process", "database");
+    for (let i = 1; i < 6; i++) {
+        document.getElementById("p" + i.toString()).addEventListener('click', function () {
+            window.location.href = project_refs[i - 1];
+        });
+    }
 }
