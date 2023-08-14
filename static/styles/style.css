@@ -81,6 +81,19 @@ h3 {
     line-height: 60px;
   }
 
+  img {
+    width: 500px;
+    height: 300px;
+    border: 3px solid;
+    color: blanchedalmond;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 55%;
+    margin: 0 auto;
+    display: block;
+  }
+
 @keyframes show_block {
     0% {
       opacity: 0;
@@ -100,4 +113,27 @@ h3 {
     100% {
         background-position: 0% 50%;
     }
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+ 
+.carousel-inner {
+  display: flex;
+  width: 300%;
+  transition: transform 0.5s;
+}
+ 
+.carousel-item {
+  flex: 1;
+  text-align: center;
+}
+ 
+.carousel-item img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
 }

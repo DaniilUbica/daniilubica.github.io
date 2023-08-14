@@ -31,7 +31,7 @@ function init_projects() {
     }
     else if (document.documentElement.scrollWidth - 8 < 2000) {
         t = parseInt(start_x.slice(0, -1));
-        t -= (1900 - (document.documentElement.scrollWidth - 8)) / 45;
+        t -= (1900 - (document.documentElement.scrollWidth - 8)) / 5;
     }
     else if (document.documentElement.scrollWidth - 8 < 2600) {
         t = parseInt(start_x.slice(0, -1));
