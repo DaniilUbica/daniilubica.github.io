@@ -12,32 +12,25 @@ function init_projects() {
     if (document.documentElement.scrollWidth - 8 < 350) {
         t = parseInt(start_x.slice(0, -1));
         t -= (350 - (document.documentElement.scrollWidth - 8)) / 1.5;
-    }
-    else if (document.documentElement.scrollWidth - 8 < 380) {
+    } else if (document.documentElement.scrollWidth - 8 < 380) {
         t = parseInt(start_x.slice(0, -1));
         t -= (380 - (document.documentElement.scrollWidth - 8)) / 2;
-    }
-    else if (document.documentElement.scrollWidth - 8 < 450) {
+    } else if (document.documentElement.scrollWidth - 8 < 450) {
         t = parseInt(start_x.slice(0, -1));
         t -= (450 - (document.documentElement.scrollWidth - 8)) / 1.1;
-    }
-    else if (document.documentElement.scrollWidth - 8 < 780) {
+    } else if (document.documentElement.scrollWidth - 8 < 780) {
         t = parseInt(start_x.slice(0, -1));
         t -= (780 - (document.documentElement.scrollWidth - 8)) / 0.9;
-    }
-    else if (document.documentElement.scrollWidth - 8 < 1050) {
+    } else if (document.documentElement.scrollWidth - 8 < 1050) {
         t = parseInt(start_x.slice(0, -1));
         t -= (1050 - (document.documentElement.scrollWidth - 8)) / 1.9;
-    }
-    else if (document.documentElement.scrollWidth - 8 < 2000) {
+    } else if (document.documentElement.scrollWidth - 8 < 2000) {
         t = parseInt(start_x.slice(0, -1));
-        t -= (1900 - (document.documentElement.scrollWidth - 8)) / 5;
-    }
-    else if (document.documentElement.scrollWidth - 8 < 2600) {
+        t -= (1900 - (document.documentElement.scrollWidth - 8)) / 50;
+    } else if (document.documentElement.scrollWidth - 8 < 2600) {
         t = parseInt(start_x.slice(0, -1));
         t -= (1900 - (document.documentElement.scrollWidth - 8)) / 83;
-    }
-    else {
+    } else {
         t = parseInt(start_x.slice(0, -1));
     }
 
@@ -46,8 +39,17 @@ function init_projects() {
     for (let i = 1; i < 6; i++) {
         let t = parseInt(start_x);
         document.getElementById("p" + i.toString()).style.left = t.toString() + '%';
-        //start_x = (parseFloat(start_x.slice(0, -1)) + 2).toString() + '%';
     }
+
+    document.getElementById("c1").style.display = "block";
+    document.getElementById("c2").style.display = "block";
+    document.getElementById("c1").style.top = "58%";
+    document.getElementById("c2").style.top = "59%";
+    document.getElementById("c1").style.height = "40px";
+    document.getElementById("c2").style.height = "40px";
+    document.getElementById("c1").style.lineHeight = "30px";
+    document.getElementById("c2").style.lineHeight = "30px";
+
     set_projects_refs();
 }
 
