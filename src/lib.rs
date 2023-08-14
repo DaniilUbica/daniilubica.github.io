@@ -69,15 +69,23 @@ pub fn show_proj_info(proj: String) -> Html<String> {
         <link rel=\"stylesheet\" type=\"text/css\" href=\"../static/styles/style.css\"></link>   
         <style> .header {{
             width: 400px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
           }}</style>
         <div class=\"header\">{}</div>
         <style>.description {{
+            left: 0;
+            right: 0;
+            margin: 0 auto;
             top: 30%;
           }}</style>
         <h3 class=\"description\">{}</h3>
         <style>.full_description {{
             width: 550px;
-            left: calc(45% - 180px); 
+            left: 0;
+            right: 0;
+            margin: 0 auto;
             top: 40%;
           }}</style>
         <h3 class=\"full_description\">{}</h3>
@@ -96,7 +104,6 @@ pub fn show_proj_info(proj: String) -> Html<String> {
             height: 40px;
             top: 60%;
             line-height: 40px;
-            left: calc(46% - 90px);
             cursor: pointer;
         }}
         </style>
