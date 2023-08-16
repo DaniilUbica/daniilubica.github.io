@@ -43,6 +43,21 @@ h3 {
   animation: show_block 1s linear forwards;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 3px solid;
+  border-color: white;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30%;
+}
+
 .proj_block {
     display: inline-block;
     color: white;
@@ -54,7 +69,6 @@ h3 {
     position: relative;
     left: 0;
     right: 0;
-    margin: 0 auto;
     width: 200px;
     height: 200px;
     font-size: 20px;

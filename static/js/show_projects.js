@@ -7,39 +7,6 @@ function on_proj_over() {
 }
 
 function init_projects() {
-    let start_x = "22%";
-    let t;
-    if (document.documentElement.scrollWidth - 8 < 350) {
-        t = parseInt(start_x.slice(0, -1));
-        t -= (350 - (document.documentElement.scrollWidth - 8)) / 1.5;
-    } else if (document.documentElement.scrollWidth - 8 < 380) {
-        t = parseInt(start_x.slice(0, -1));
-        t -= (380 - (document.documentElement.scrollWidth - 8)) / 2;
-    } else if (document.documentElement.scrollWidth - 8 < 450) {
-        t = parseInt(start_x.slice(0, -1));
-        t -= (450 - (document.documentElement.scrollWidth - 8)) / 1.1;
-    } else if (document.documentElement.scrollWidth - 8 < 780) {
-        t = parseInt(start_x.slice(0, -1));
-        t -= (780 - (document.documentElement.scrollWidth - 8)) / 0.9;
-    } else if (document.documentElement.scrollWidth - 8 < 1050) {
-        t = parseInt(start_x.slice(0, -1));
-        t -= (1050 - (document.documentElement.scrollWidth - 8)) / 1.9;
-    } else if (document.documentElement.scrollWidth - 8 < 2000) {
-        t = parseInt(start_x.slice(0, -1));
-        t -= (1900 - (document.documentElement.scrollWidth - 8)) / 50;
-    } else if (document.documentElement.scrollWidth - 8 < 2600) {
-        t = parseInt(start_x.slice(0, -1));
-        t -= (1900 - (document.documentElement.scrollWidth - 8)) / 83;
-    } else {
-        t = parseInt(start_x.slice(0, -1));
-    }
-
-    start_x = t.toString() + '%'
-
-    for (let i = 1; i < 6; i++) {
-        let t = parseInt(start_x);
-        document.getElementById("p" + i.toString()).style.left = t.toString() + '%';
-    }
 
     document.getElementById("c1").style.display = "block";
     document.getElementById("c2").style.display = "block";
