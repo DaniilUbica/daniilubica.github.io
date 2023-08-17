@@ -8,7 +8,7 @@ use rocket::response::content::Html;
 
 #[get("/")]
 pub fn index() -> Result<impl Responder<'static>, failure::Error> {
-    NamedFile::open("./docs/index.html").map_err(|e| e.into())
+    NamedFile::open("./index.html").map_err(|e| e.into())
 }
 
 #[get("/<proj>")]
