@@ -1,0 +1,5 @@
+* linguist-vendored
+*.js linguist-vendored=false
+*.rs linguist-vendored=false
+*.css linguist-vendored=false
+index.html linguist-vendored=false
