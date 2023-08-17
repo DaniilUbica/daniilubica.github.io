@@ -42,7 +42,7 @@ function set_projects_refs() {
     project_refs.push("people_vs_undeads", "escape_from_bobrovo", "mematrica", "txt_process", "database");
     for (let i = 1; i < 6; i++) {
         document.getElementById("p" + i.toString()).addEventListener('click', function () {
-            window.location.href = project_refs[i - 1];
+            window.location.href = project_refs[i - 1]+".html";
         });
     }
 }
