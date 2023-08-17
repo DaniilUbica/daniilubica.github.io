@@ -8,7 +8,7 @@ use rocket::response::content::Html;
 
 #[get("/")]
 pub fn index() -> Result<impl Responder<'static>, failure::Error> {
-    NamedFile::open("./index.html").map_err(|e| e.into())
+    NamedFile::open("./pages/index.html").map_err(|e| e.into())
 }
 
 #[get("/<proj>")]
@@ -70,55 +70,50 @@ pub fn show_proj_info(proj: String) -> Html<String> {
     };
 
     Html(
-        format!("<head>
+        format!("
+    <head>
         <meta charset=\"UTF-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
         <script src=\"../static/js/project_page.js\"></script>
         <title>Document</title>
+        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM\" crossorigin=\"anonymous\">
+        <script defer src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
     </head>
     <body onload=\"init_elements()\">
         <link rel=\"stylesheet\" type=\"text/css\" href=\"../static/styles/style.css\"></link>   
-        <style> .header {{
-            width: 400px;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-          }}</style>
-        <div id=\"proj_header\" class=\"header\">{}</div>
-        <style>.description {{
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            top: 30%;
-          }}</style>
-        <h3 id=\"description\" class=\"description\">{}</h3>
-        <style>.full_description {{
-            width: 550px;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            top: 40%;
-          }}</style>
-        <h3 id=\"full_description\" class=\"full_description\">{}</h3>
-        <style>.proj_block{{
-            width: 150px;
-            height: 40px;
-            line-height: 40px;
-            cursor: pointer;
-        }}
-        </style>
-        <img id=\"first\" src=\"../static/images/{}1.png\">
-        <img id=\"second\" src=\"../static/images/{}2.png\">
-        <div id=\"try\" class=\"proj_block\" onclick=\"window.location.href='{}';\">Try it!</div>
-        <style>.proj_block{{
-            width: 150px;
-            height: 40px;
-            top: 60%;
-            line-height: 40px;
-            cursor: pointer;
-        }}
-        </style>
-        <div id=\"repo\" class=\"proj_block\" onclick=\"window.location.href='{}';\">Repository</div>
+        <div id=\"main\" class=\"container-fluid\">
+            <div class=\"ml-auto row-auto\">
+                <div class=\"col align-self-center\">
+                    <div id=\"proj_header\" class=\"header\">{}</div>
+                    <div class=\"p-3\"></div>
+                    <div id=\"description\" class=\"h3\">{}</div>
+                    <div class=\"p-3\"></div>
+                    <div id=\"full_description\" class=\"h3\">{}</div>
+                    <div class=\"p-3\"></div>
+                    <div class=\"p-5\"></div>
+                    <div class=\"p-5\"></div>
+                    <div class=\"p-5\"></div>
+                    <div class=\"p-2\"></div>
+                    <div class=\"image-parent\">
+                        <img src=\"../static/images/{}1.png\" class=\"img-fluid\">
+                    </div> 
+                </div>
+                </div>
+            </div>
+            <div class=\"container\">
+                <div class=\"image-parent\">
+                    <img src=\"../static/images/{}2.png\" class=\"img-fluid\">
+                </div>  
+            </div>
+            <div id=\"btns\" class=\"container\">
+                <div class=\"row justify-content-center\">
+                    <div class=\"col align-self-center\">
+                        <div id=\"try\" class=\"proj_block\" onclick=\"window.location.href='{}';\">Try it!</div>
+                        <div class=\"col align-self-center\"></div>
+                        <div id=\"repo\" class=\"proj_block\" onclick=\"window.location.href='{}';\">Repository</div>
+                    </div>
+                </div>
+            </div>
     </body>", project_name, project_description, project_full_description, project_img_name, project_img_name, project_link, project_repo_link)
     )
 }

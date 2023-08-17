@@ -7,11 +7,29 @@ function on_proj_over() {
 }
 
 function init_projects() {
+    document.getElementById("proj_buttons").style.marginTop = "0.5%";
+    document.getElementById("contacts").style.marginTop = "5%";
 
-    document.getElementById("c1").style.display = "block";
-    document.getElementById("c2").style.display = "block";
-    document.getElementById("c1").style.top = "58%";
-    document.getElementById("c2").style.top = "59%";
+    document.getElementById("co1").style.display = "none";
+    document.getElementById("co2").style.display = "none";
+    document.getElementById("co3").style.display = "none";
+    document.getElementById("co4").style.display = "none";
+
+    if (document.documentElement.scrollWidth < 1200) {
+        document.getElementById("co3").style.display = "block";
+    }
+    if (document.documentElement.scrollWidth < 768) {
+        document.getElementById("co2").style.display = "block";
+        document.getElementById("co4").style.display = "block";
+        document.getElementById("co3").style.display = "none";
+    }
+    if (document.documentElement.scrollWidth < 436) {
+        document.getElementById("co1").style.display = "block";
+        document.getElementById("co2").style.display = "block";
+        document.getElementById("co3").style.display = "block";
+        document.getElementById("co4").style.display = "block";
+    }
+    
     document.getElementById("c1").style.height = "40px";
     document.getElementById("c2").style.height = "40px";
     document.getElementById("c1").style.lineHeight = "30px";
